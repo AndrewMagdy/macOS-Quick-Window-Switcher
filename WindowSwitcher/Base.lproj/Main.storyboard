@@ -688,16 +688,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <searchField wantsLayer="YES" focusRingType="exterior" verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0aQ-Lv-lzo">
+                            <searchField wantsLayer="YES" verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0aQ-Lv-lzo">
                                 <rect key="frame" x="0.0" y="248" width="480" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" focusRingType="exterior" alignment="left" drawsBackground="YES" usesSingleLineMode="YES" sendsSearchStringImmediately="YES" sendsWholeSearchString="YES" id="OHt-eB-Cgo">
+                                <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" alignment="left" drawsBackground="YES" usesSingleLineMode="YES" id="OHt-eB-Cgo">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <allowedInputSourceLocales>
+                                        <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                    </allowedInputSourceLocales>
                                 </searchFieldCell>
                                 <connections>
-                                    <outlet property="delegate" destination="XfG-lQ-9wD" id="ABo-L2-Gfg"/>
+                                    <action selector="searchDidEndSearching:" target="XfG-lQ-9wD" id="tcd-zG-fdb"/>
+                                    <binding destination="rGD-f1-erQ" name="predicate" keyPath="filterPredicate" id="Toa-zM-eTm">
+                                        <dictionary key="options">
+                                            <string key="NSDisplayName">predicate</string>
+                                            <string key="NSPredicateFormat">(self.windowTitle contains[cd] $value) or (self.appName contains[cd] $value) </string>
+                                        </dictionary>
+                                    </binding>
+                                    <outlet property="delegate" destination="XfG-lQ-9wD" id="UKq-EN-q04"/>
                                 </connections>
                             </searchField>
                             <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P18-9t-dOi">
@@ -707,7 +717,7 @@
                                     <rect key="frame" x="1" y="0.0" width="478" height="249"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="ofg-z8-OYt" viewBased="YES" id="997-KA-lmp">
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="ofg-z8-OYt" viewBased="YES" id="997-KA-lmp">
                                             <rect key="frame" x="0.0" y="0.0" width="478" height="224"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
@@ -720,7 +730,7 @@
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
-                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="uzE-vv-qLM">
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" continuous="YES" title="Text Cell" id="uzE-vv-qLM">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -739,6 +749,13 @@
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
+                                                                    <connections>
+                                                                        <binding destination="TYU-Ep-xBk" name="value" keyPath="objectValue.appName" id="KV1-Fq-jjX">
+                                                                            <dictionary key="options">
+                                                                                <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                                                            </dictionary>
+                                                                        </binding>
+                                                                    </connections>
                                                                 </textField>
                                                             </subviews>
                                                             <connections>
@@ -753,7 +770,7 @@
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
-                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="zSJ-wF-j0Y">
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" continuous="YES" title="Text Cell" id="zSJ-wF-j0Y">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -772,6 +789,13 @@
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
+                                                                    <connections>
+                                                                        <binding destination="jRA-T6-NWC" name="value" keyPath="objectValue.windowTitle" id="jEv-Vr-jxE">
+                                                                            <dictionary key="options">
+                                                                                <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                                                            </dictionary>
+                                                                        </binding>
+                                                                    </connections>
                                                                 </textField>
                                                             </subviews>
                                                             <connections>
@@ -782,7 +806,17 @@
                                                 </tableColumn>
                                             </tableColumns>
                                             <connections>
-                                                <outlet property="dataSource" destination="XfG-lQ-9wD" id="EOm-MU-2S0"/>
+                                                <action trigger="doubleAction" selector="tableViewDoubleClick:" target="XfG-lQ-9wD" id="eYe-oC-MwP"/>
+                                                <binding destination="rGD-f1-erQ" name="content" keyPath="arrangedObjects" id="tpg-oU-M6Z">
+                                                    <dictionary key="options">
+                                                        <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                    </dictionary>
+                                                </binding>
+                                                <binding destination="rGD-f1-erQ" name="selectionIndexes" keyPath="selectionIndexes" previousBinding="tpg-oU-M6Z" id="1Vu-u3-9vB">
+                                                    <dictionary key="options">
+                                                        <bool key="NSValidatesImmediately" value="YES"/>
+                                                    </dictionary>
+                                                </binding>
                                                 <outlet property="delegate" destination="XfG-lQ-9wD" id="XBv-U1-voP"/>
                                             </connections>
                                         </tableView>
@@ -805,10 +839,12 @@
                     </view>
                     <connections>
                         <outlet property="searchField" destination="m2S-Jp-Qdl" id="5a4-Ui-p05"/>
+                        <outlet property="searchResultsController" destination="rGD-f1-erQ" id="7X0-Bd-Jj4"/>
                         <outlet property="tableView" destination="997-KA-lmp" id="IdG-N1-8gn"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <arrayController editable="NO" automaticallyRearrangesObjects="YES" id="rGD-f1-erQ"/>
             </objects>
             <point key="canvasLocation" x="75" y="655"/>
         </scene>

@@ -3,18 +3,20 @@
 
 import Foundation
 
-class WindowInfoDict {
+class WindowInfoDict: NSObject {
     private let windowInfoDict : Dictionary<NSObject, AnyObject>;
     
     init(rawDict : UnsafeRawPointer) {
-        windowInfoDict = unsafeBitCast(rawDict, to: CFDictionary.self) as Dictionary
+        self.windowInfoDict = unsafeBitCast(rawDict, to: CFDictionary.self) as Dictionary
+        super.init()
+
     }
     
-    var name : String {
+    @objc dynamic var name : String {
         return self.dictItem(key: "kCGWindowName", defaultValue: "")
     }
     
-    var windowTitle: String {
+    @objc dynamic var windowTitle: String {
         return self.name
     }
     
@@ -22,7 +24,7 @@ class WindowInfoDict {
         return self.dictItem(key: "kCGWindowOwnerName", defaultValue: "")
     }
     
-    var appName : String {
+     @objc dynamic var appName : String {
         return self.dictItem(key: "kCGWindowOwnerName", defaultValue: "")
     }
     
@@ -56,11 +58,7 @@ class WindowInfoDict {
     static func == (lhs: WindowInfoDict, rhs: WindowInfoDict) -> Bool {
         return lhs.processName == rhs.processName && lhs.name == rhs.name
     }
-    
-    var hashValue: Int {
-        return "\(self.processName)-\(self.name)".hashValue
-    }
-    
+        
     var searchStrings: [String] {
         return [self.processName, self.name]
     }

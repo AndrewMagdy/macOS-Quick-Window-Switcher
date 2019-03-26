@@ -12,17 +12,28 @@ class SearchViewController: NSViewController {
     
     @IBOutlet weak var tableView: NSTableView!
     @IBOutlet var searchField: NSView!
-
+    @IBOutlet var searchResultsController: NSArrayController!
     
+
     var windows:[WindowInfoDict] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    @IBAction func searchDidEndSearching(_ sender: Any) {
+        self.searchResultsController.setSelectionIndex(0)
+    }
+    
+    @IBAction func tableViewDoubleClick(_ sender: Any) {
+        print("Hi")
+        self.switchToSelectedWindow()
+    }
+    
     override func viewWillAppear() {
         super.viewWillAppear()
         self.windows = Windows.all
+        self.searchResultsController.content = Windows.all
         tableView.reloadData()
     }
     
@@ -30,13 +41,17 @@ class SearchViewController: NSViewController {
         return windows as! NSMutableArray
     }
     
-    func switchToWindow(idx: Int) {
-        if (idx < 0){
+    func switchToSelectedWindow() {
+        guard let window = self.searchResultsController.selectedObjects.first else {
             return
         }
+        self.switchToWindow(window: window as! WindowInfoDict)
         
-        let windowOwner = windows[idx].appName
-        let windowName = windows[idx].windowTitle
+    }
+    func switchToWindow(window: WindowInfoDict) {
+        let windowOwner = window.appName
+        let windowName = window.windowTitle
+        print(windowOwner, windowName)
         var error: NSDictionary?
         let myAppleScript = """
         try
@@ -64,38 +79,21 @@ class SearchViewController: NSViewController {
     
 }
 
-extension SearchViewController : NSTableViewDelegate, NSTableViewDataSource {
-    func numberOfRows(in tableView: NSTableView) -> Int {
-        return self.windows.count
-    }
-    
-    func tableViewSelectionDidChange(_ notification: Notification) {
-        self.switchToWindow(idx: tableView.selectedRow)
-        let appDelegate = NSApplication.shared.delegate as! AppDelegate
-        appDelegate.closePopover(sender: nil)
-    }
-    
-    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        guard let vw = tableView.makeView(withIdentifier: tableColumn!.identifier, owner: self) as? NSTableCellView else { return nil }
-        
-        if tableColumn?.title == "App Name" {
-            vw.textField?.stringValue = windows[row].appName
-        } else {
-            vw.textField?.stringValue = windows[row].windowTitle
-        }
-        
-        return vw
-    }
-}
 
 extension SearchViewController: NSSearchFieldDelegate {
-    func searchFieldDidStartSearching(_ sender: NSSearchField) {
-        print("didStart")
+    func control(_ control: NSControl, textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
+        if commandSelector == #selector(insertNewline(_:)) {
+            switchToSelectedWindow()
+        }
+        else if commandSelector == #selector(moveUp(_:)) {
+            searchResultsController.selectPrevious(nil)
+        }
+        else if commandSelector == #selector(moveDown(_:)) {
+            searchResultsController.selectNext(nil)
+        }
+        return false
     }
     
-    func searchFieldDidEndSearching(_ sender: NSSearchField) {
-        print("didEnd")
-    }
 }
 
 extension SearchViewController {
