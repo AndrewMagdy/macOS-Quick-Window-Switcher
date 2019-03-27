@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0458108376ED8DE8250E9181 /* Pods_WindowSwitcherUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B5CA14F72D58248C96E2F51 /* Pods_WindowSwitcherUITests.framework */; };
 		4C19C48B224A3D1C009D1C22 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C19C48A224A3D1C009D1C22 /* SearchViewController.swift */; };
 		4C19C48D224A5DA7009D1C22 /* Windows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C19C48C224A5DA7009D1C22 /* Windows.swift */; };
 		4C8D0BAB2246BC5000EB9F75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8D0BAA2246BC5000EB9F75 /* AppDelegate.swift */; };
@@ -15,6 +16,8 @@
 		4C8D0BB22246BC5200EB9F75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C8D0BB02246BC5200EB9F75 /* Main.storyboard */; };
 		4C8D0BBE2246BC5200EB9F75 /* WindowSwitcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8D0BBD2246BC5200EB9F75 /* WindowSwitcherTests.swift */; };
 		4C8D0BC92246BC5200EB9F75 /* WindowSwitcherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8D0BC82246BC5200EB9F75 /* WindowSwitcherUITests.swift */; };
+		9183895C6DA3CEE87C4BEC6E /* Pods_WindowSwitcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACE9A6BD8A0AB77257E5D613 /* Pods_WindowSwitcher.framework */; };
+		F076AFAD4D0AC4084461671E /* Pods_WindowSwitcherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 961AE49F8C914B09180F26D0 /* Pods_WindowSwitcherTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D6E65F6D051F7CB88A4E290 /* Pods-WindowSwitcher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WindowSwitcher.release.xcconfig"; path = "Target Support Files/Pods-WindowSwitcher/Pods-WindowSwitcher.release.xcconfig"; sourceTree = "<group>"; };
+		1A7BB118ED5A38268121291B /* Pods-WindowSwitcherUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WindowSwitcherUITests.debug.xcconfig"; path = "Target Support Files/Pods-WindowSwitcherUITests/Pods-WindowSwitcherUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4C19C48A224A3D1C009D1C22 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		4C19C48C224A5DA7009D1C22 /* Windows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Windows.swift; sourceTree = "<group>"; };
 		4C8D0BA72246BC5000EB9F75 /* WindowSwitcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WindowSwitcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +54,13 @@
 		4C8D0BC42246BC5200EB9F75 /* WindowSwitcherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WindowSwitcherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C8D0BC82246BC5200EB9F75 /* WindowSwitcherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowSwitcherUITests.swift; sourceTree = "<group>"; };
 		4C8D0BCA2246BC5200EB9F75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B5CA14F72D58248C96E2F51 /* Pods_WindowSwitcherUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WindowSwitcherUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EC2EEC7027CE97C59C852EE /* Pods-WindowSwitcherUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WindowSwitcherUITests.release.xcconfig"; path = "Target Support Files/Pods-WindowSwitcherUITests/Pods-WindowSwitcherUITests.release.xcconfig"; sourceTree = "<group>"; };
+		961AE49F8C914B09180F26D0 /* Pods_WindowSwitcherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WindowSwitcherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2A8CF01C0390F41D3A2E74F /* Pods-WindowSwitcherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WindowSwitcherTests.debug.xcconfig"; path = "Target Support Files/Pods-WindowSwitcherTests/Pods-WindowSwitcherTests.debug.xcconfig"; sourceTree = "<group>"; };
+		ACE9A6BD8A0AB77257E5D613 /* Pods_WindowSwitcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WindowSwitcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB963467FDAC553C010FD82F /* Pods-WindowSwitcherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WindowSwitcherTests.release.xcconfig"; path = "Target Support Files/Pods-WindowSwitcherTests/Pods-WindowSwitcherTests.release.xcconfig"; sourceTree = "<group>"; };
+		F504172C3267C0BC24C11DB8 /* Pods-WindowSwitcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WindowSwitcher.debug.xcconfig"; path = "Target Support Files/Pods-WindowSwitcher/Pods-WindowSwitcher.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9183895C6DA3CEE87C4BEC6E /* Pods_WindowSwitcher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F076AFAD4D0AC4084461671E /* Pods_WindowSwitcherTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0458108376ED8DE8250E9181 /* Pods_WindowSwitcherUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +98,8 @@
 				4C8D0BBC2246BC5200EB9F75 /* WindowSwitcherTests */,
 				4C8D0BC72246BC5200EB9F75 /* WindowSwitcherUITests */,
 				4C8D0BA82246BC5000EB9F75 /* Products */,
+				987B73AEF47F03289D6B2810 /* Pods */,
+				F3E15E0C6053EDD5ED60C422 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +145,30 @@
 			path = WindowSwitcherUITests;
 			sourceTree = "<group>";
 		};
+		987B73AEF47F03289D6B2810 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F504172C3267C0BC24C11DB8 /* Pods-WindowSwitcher.debug.xcconfig */,
+				0D6E65F6D051F7CB88A4E290 /* Pods-WindowSwitcher.release.xcconfig */,
+				A2A8CF01C0390F41D3A2E74F /* Pods-WindowSwitcherTests.debug.xcconfig */,
+				DB963467FDAC553C010FD82F /* Pods-WindowSwitcherTests.release.xcconfig */,
+				1A7BB118ED5A38268121291B /* Pods-WindowSwitcherUITests.debug.xcconfig */,
+				8EC2EEC7027CE97C59C852EE /* Pods-WindowSwitcherUITests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F3E15E0C6053EDD5ED60C422 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ACE9A6BD8A0AB77257E5D613 /* Pods_WindowSwitcher.framework */,
+				961AE49F8C914B09180F26D0 /* Pods_WindowSwitcherTests.framework */,
+				7B5CA14F72D58248C96E2F51 /* Pods_WindowSwitcherUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +176,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C8D0BCD2246BC5200EB9F75 /* Build configuration list for PBXNativeTarget "WindowSwitcher" */;
 			buildPhases = (
+				552733E5D27D1A284B36853D /* [CP] Check Pods Manifest.lock */,
 				4C8D0BA32246BC5000EB9F75 /* Sources */,
 				4C8D0BA42246BC5000EB9F75 /* Frameworks */,
 				4C8D0BA52246BC5000EB9F75 /* Resources */,
+				CDFF47249806C584C2A7BA78 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +195,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C8D0BD02246BC5200EB9F75 /* Build configuration list for PBXNativeTarget "WindowSwitcherTests" */;
 			buildPhases = (
+				41ABDCE65172A73D63B6ED9C /* [CP] Check Pods Manifest.lock */,
 				4C8D0BB52246BC5200EB9F75 /* Sources */,
 				4C8D0BB62246BC5200EB9F75 /* Frameworks */,
 				4C8D0BB72246BC5200EB9F75 /* Resources */,
@@ -170,6 +214,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C8D0BD32246BC5200EB9F75 /* Build configuration list for PBXNativeTarget "WindowSwitcherUITests" */;
 			buildPhases = (
+				55209287CAA55C2E4408227F /* [CP] Check Pods Manifest.lock */,
 				4C8D0BC02246BC5200EB9F75 /* Sources */,
 				4C8D0BC12246BC5200EB9F75 /* Frameworks */,
 				4C8D0BC22246BC5200EB9F75 /* Resources */,
@@ -252,6 +297,97 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		41ABDCE65172A73D63B6ED9C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WindowSwitcherTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		55209287CAA55C2E4408227F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WindowSwitcherUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		552733E5D27D1A284B36853D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WindowSwitcher-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CDFF47249806C584C2A7BA78 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WindowSwitcher/Pods-WindowSwitcher-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/HotKey/HotKey.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HotKey.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WindowSwitcher/Pods-WindowSwitcher-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4C8D0BA32246BC5000EB9F75 /* Sources */ = {
@@ -425,6 +561,7 @@
 		};
 		4C8D0BCE2246BC5200EB9F75 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F504172C3267C0BC24C11DB8 /* Pods-WindowSwitcher.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = WindowSwitcher/WindowSwitcher.entitlements;
@@ -443,6 +580,7 @@
 		};
 		4C8D0BCF2246BC5200EB9F75 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D6E65F6D051F7CB88A4E290 /* Pods-WindowSwitcher.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = WindowSwitcher/WindowSwitcher.entitlements;
@@ -461,6 +599,7 @@
 		};
 		4C8D0BD12246BC5200EB9F75 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2A8CF01C0390F41D3A2E74F /* Pods-WindowSwitcherTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -481,6 +620,7 @@
 		};
 		4C8D0BD22246BC5200EB9F75 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB963467FDAC553C010FD82F /* Pods-WindowSwitcherTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -501,6 +641,7 @@
 		};
 		4C8D0BD42246BC5200EB9F75 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A7BB118ED5A38268121291B /* Pods-WindowSwitcherUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -520,6 +661,7 @@
 		};
 		4C8D0BD52246BC5200EB9F75 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8EC2EEC7027CE97C59C852EE /* Pods-WindowSwitcherUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
