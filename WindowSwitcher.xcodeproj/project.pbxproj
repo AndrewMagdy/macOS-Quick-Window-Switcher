@@ -155,7 +155,6 @@
 				1A7BB118ED5A38268121291B /* Pods-WindowSwitcherUITests.debug.xcconfig */,
 				8EC2EEC7027CE97C59C852EE /* Pods-WindowSwitcherUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

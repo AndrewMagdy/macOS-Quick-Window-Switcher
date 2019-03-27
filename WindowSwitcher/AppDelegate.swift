@@ -42,22 +42,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func showPopover(sender: Any?) {
-        
         let newWindow = NSWindow(contentRect: NSMakeRect(NSScreen.main!.frame.midX, NSScreen.main!.frame.midY, 1, 1), styleMask: [.closable], backing: .buffered, defer: false)
         newWindow.title = "New Window"
         newWindow.isOpaque = false
         newWindow.center()
         newWindow.isMovableByWindowBackground = true
         newWindow.makeKeyAndOrderFront(nil)
-        //newWindow.backgroundColor = .clear
+        newWindow.backgroundColor = .clear
         
         let asd = NSMakeRect(-10, 0, 0, 0 )
         NSRunningApplication.current.activate(options: NSApplication.ActivationOptions.activateIgnoringOtherApps)
-
+        
         popover.show(relativeTo: asd, of: newWindow.contentView as! NSView, preferredEdge: NSRectEdge.minY)
-
-        
-        
     }
     
     func closePopover(sender: Any?) {

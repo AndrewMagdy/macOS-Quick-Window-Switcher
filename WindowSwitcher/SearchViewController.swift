@@ -9,13 +9,9 @@
 import Cocoa
 
 class SearchViewController: NSViewController {
-    
     @IBOutlet weak var tableView: NSTableView!
     @IBOutlet var searchField: NSView!
     @IBOutlet var searchResultsController: NSArrayController!
-    
-
-    var windows:[WindowInfoDict] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,26 +22,24 @@ class SearchViewController: NSViewController {
     }
     
     @IBAction func tableViewDoubleClick(_ sender: Any) {
-        print("Hi")
         self.switchToSelectedWindow()
     }
     
+    
     override func viewWillAppear() {
-        super.viewWillAppear()
-        self.windows = Windows.all
         self.searchResultsController.content = Windows.all
-        tableView.reloadData()
+        super.viewWillAppear()
     }
     
-    func dataArray () -> NSMutableArray{
-        return windows as! NSMutableArray
-    }
+
     
     func switchToSelectedWindow() {
         guard let window = self.searchResultsController.selectedObjects.first else {
             return
         }
         self.switchToWindow(window: window as! WindowInfoDict)
+        let appDelegate = NSApplication.shared.delegate as! AppDelegate
+        appDelegate.closePopover(sender: nil)
         
     }
     func switchToWindow(window: WindowInfoDict) {
@@ -55,15 +49,15 @@ class SearchViewController: NSViewController {
         var error: NSDictionary?
         let myAppleScript = """
         try
-            tell application "System Events"
-                with timeout of 0.1 seconds
-                    tell process "\(windowOwner)" to perform action "AXRaise" of window "\(windowName)"
-                end timeout
-            end tell
+        tell application "System Events"
+        with timeout of 0.1 seconds
+        tell process "\(windowOwner)" to perform action "AXRaise" of window "\(windowName)"
+        end timeout
+        end tell
         end try
         
         tell application "\(windowOwner)"
-            activate
+        activate
         end tell
         """
         
