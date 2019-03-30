@@ -28,10 +28,11 @@ class SearchViewController: NSViewController {
     
     override func viewWillAppear() {
         self.searchResultsController.content = Windows.all
+        tableView.reloadData()
         super.viewWillAppear()
     }
     
-
+    
     
     func switchToSelectedWindow() {
         guard let window = self.searchResultsController.selectedObjects.first else {
@@ -45,26 +46,28 @@ class SearchViewController: NSViewController {
     func switchToWindow(window: WindowInfoDict) {
         let windowOwner = window.appName
         let windowName = window.windowTitle
+        
         print(windowOwner, windowName)
         var error: NSDictionary?
         let myAppleScript = """
-        try
-        tell application "System Events"
-        with timeout of 0.1 seconds
-        tell process "\(windowOwner)" to perform action "AXRaise" of window "\(windowName)"
-        end timeout
-        end tell
-        end try
-        
         tell application "\(windowOwner)"
-        activate
+            tell application "System Events"
+                tell process "\(windowOwner)"
+                    tell menu bar 1
+                        click menu item "\(windowName)" of menu 1 of menu bar item -2
+                    end tell
+                end tell
+            end tell
+            delay 3
+            activate
         end tell
         """
+        //print(myAppleScript)
         
         if let scriptObject = NSAppleScript(source: myAppleScript) {
             if let output: NSAppleEventDescriptor = scriptObject.executeAndReturnError(
                 &error) {
-                //print(output.stringValue)
+                print(output.stringValue)
             } else if (error != nil) {
                 print("error: \(error)")
             }

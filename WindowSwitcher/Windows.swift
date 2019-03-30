@@ -8,6 +8,7 @@ class WindowInfoDict: NSObject {
     
     init(rawDict : UnsafeRawPointer) {
         self.windowInfoDict = unsafeBitCast(rawDict, to: CFDictionary.self) as Dictionary
+        //print(windowInfoDict)
         super.init()
 
     }
