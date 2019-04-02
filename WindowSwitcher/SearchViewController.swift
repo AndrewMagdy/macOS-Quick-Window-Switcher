@@ -50,14 +50,10 @@ class SearchViewController: NSViewController {
         print (window.processName)
         print(windowOwner, windowName)
         
-//        let task = Process()
-//        task.launchPath = "/usr/bin/osascript"
-//        task.arguments = ["/Users/andrewmagdy/Documents/testScript.scpt"]
-//
-//        task.launch()
-        
         var error: NSDictionary?
         let myAppleScript = """
+        tell application "Finder" to activate desktop
+        delay 0.2
         tell application "\(windowOwner)"
             tell application "System Events"
                 tell process "\(windowOwner)"
