@@ -58,14 +58,16 @@ class SearchViewController: NSViewController {
             tell application "System Events"
                 tell process "\(windowOwner)"
                     tell menu bar 1
-                        click menu item "\(windowName)" of menu 1 of menu bar item -2
+                        if exists ((menu item 1 where its name contains "\(windowName)") of menu 1 of menu bar item -2) then
+                            click (menu item 1 where its name contains "\(windowName)") of menu 1 of menu bar item -2
+                        end if
                     end tell
                 end tell
             end tell
             activate
         end tell
         """
-        //print(myAppleScript)
+        print(myAppleScript)
 
         if let scriptObject = NSAppleScript(source: myAppleScript) {
             if let output: NSAppleEventDescriptor = scriptObject.executeAndReturnError(
