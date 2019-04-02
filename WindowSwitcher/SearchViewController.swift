@@ -47,7 +47,15 @@ class SearchViewController: NSViewController {
         let windowOwner = window.appName
         let windowName = window.windowTitle
         
+        print (window.processName)
         print(windowOwner, windowName)
+        
+//        let task = Process()
+//        task.launchPath = "/usr/bin/osascript"
+//        task.arguments = ["/Users/andrewmagdy/Documents/testScript.scpt"]
+//
+//        task.launch()
+        
         var error: NSDictionary?
         let myAppleScript = """
         tell application "\(windowOwner)"
@@ -58,12 +66,11 @@ class SearchViewController: NSViewController {
                     end tell
                 end tell
             end tell
-            delay 3
             activate
         end tell
         """
         //print(myAppleScript)
-        
+
         if let scriptObject = NSAppleScript(source: myAppleScript) {
             if let output: NSAppleEventDescriptor = scriptObject.executeAndReturnError(
                 &error) {
