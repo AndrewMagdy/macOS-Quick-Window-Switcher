@@ -32,8 +32,6 @@ class SearchViewController: NSViewController {
         super.viewWillAppear()
     }
     
-    
-    
     func switchToSelectedWindow() {
         guard let window = self.searchResultsController.selectedObjects.first else {
             return
@@ -43,6 +41,7 @@ class SearchViewController: NSViewController {
         appDelegate.closePopover(sender: nil)
         
     }
+    
     func switchToWindow(window: WindowInfoDict) {
         let windowOwner = window.appName
         let windowName = window.windowTitle
@@ -53,7 +52,9 @@ class SearchViewController: NSViewController {
         var error: NSDictionary?
         let myAppleScript = """
         tell application "Finder" to activate desktop
-        delay 0.2
+        
+        delay 0.1
+        
         tell application "\(windowOwner)"
             tell application "System Events"
                 tell process "\(windowOwner)"
@@ -66,6 +67,22 @@ class SearchViewController: NSViewController {
             end tell
             activate
         end tell
+        
+        delay 0.1
+        
+        tell application "\(windowOwner)"
+        tell application "System Events"
+        tell process "\(windowOwner)"
+        tell menu bar 1
+        if exists ((menu item 1 where its name contains "\(windowName)") of menu 1 of menu bar item -2) then
+        click (menu item 1 where its name contains "\(windowName)") of menu 1 of menu bar item -2
+        end if
+        end tell
+        end tell
+        end tell
+        activate
+        end tell
+        
         """
         print(myAppleScript)
 

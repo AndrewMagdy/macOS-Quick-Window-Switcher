@@ -15,6 +15,7 @@ import HotKey
 class AppDelegate: NSObject, NSApplicationDelegate {
     let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
     let popover = NSPopover()
+    
     let hotKey = HotKey(key: .p, modifiers: [.command, .option])
     
     
@@ -23,6 +24,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             button.image = NSImage(named:NSImage.Name("StatusBarButtonImage"))
             button.action = #selector(togglePopover(_:))
         }
+        popover.behavior = NSPopover.Behavior.transient
         hotKey.keyDownHandler = {
             self.togglePopover(nil)
         }
