@@ -15,7 +15,6 @@ import HotKey
 class AppDelegate: NSObject, NSApplicationDelegate {
     let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
     let popover = NSPopover()
-    
     let hotKey = HotKey(key: .p, modifiers: [.command, .option])
     
     
@@ -44,22 +43,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func showPopover(sender: Any?) {
-        let newWindow = NSWindow(contentRect: NSMakeRect(NSScreen.main!.frame.midX, NSScreen.main!.frame.midY, 1, 1), styleMask: [.closable], backing: .buffered, defer: false)
-        newWindow.title = "New Window"
-        newWindow.isOpaque = false
-        newWindow.center()
-        newWindow.isMovableByWindowBackground = true
-        newWindow.makeKeyAndOrderFront(nil)
-        newWindow.backgroundColor = .clear
-        
-        let asd = NSMakeRect(-10, 0, 0, 0 )
-        NSRunningApplication.current.activate(options: NSApplication.ActivationOptions.activateIgnoringOtherApps)
-        
-        popover.show(relativeTo: asd, of: newWindow.contentView as! NSView, preferredEdge: NSRectEdge.minY)
+        if let button = statusItem.button {
+            popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
+        }
     }
     
     func closePopover(sender: Any?) {
-        popover.performClose(sender)
+        popover.performClose(sender);
+
     }
 }
 
