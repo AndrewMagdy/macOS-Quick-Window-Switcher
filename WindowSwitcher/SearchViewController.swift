@@ -1,11 +1,3 @@
-//
-//  SearchViewController.swift
-//  WindowSwitcher
-//
-//  Created by Andrew Magdy on 3/26/19.
-//  Copyright © 2019 Andrew Magdy. All rights reserved.
-//
-
 import Cocoa
 
 class SearchViewController: NSViewController {
@@ -25,80 +17,28 @@ class SearchViewController: NSViewController {
         self.switchToSelectedWindow()
     }
     
-    
     override func viewWillAppear() {
         self.searchResultsController.content = Windows.all
         tableView.reloadData()
         super.viewWillAppear()
     }
     
+    func closePopOver() {
+        let appDelegate = NSApplication.shared.delegate as! AppDelegate
+        appDelegate.closePopover(sender: nil)
+    }
+    
     func switchToSelectedWindow() {
         guard let window = self.searchResultsController.selectedObjects.first else {
             return
         }
-        self.switchToWindow(window: window as! WindowInfoDict)
-        let appDelegate = NSApplication.shared.delegate as! AppDelegate
-        appDelegate.closePopover(sender: nil)
+        switchWindow(window: window as! WindowInfoDict)
+        self.closePopOver()
         
     }
-    
-    func switchToWindow(window: WindowInfoDict) {
-        let windowOwner = window.appName
-        let windowName = window.windowTitle
-        
-        print (window.processName)
-        print(windowOwner, windowName)
-        
-        var error: NSDictionary?
-        let myAppleScript = """
-        tell application "Finder" to activate desktop
-        
-        delay 0.1
-        
-        tell application "\(windowOwner)"
-            tell application "System Events"
-                tell process "\(windowOwner)"
-                    tell menu bar 1
-                        if exists ((menu item 1 where its name contains "\(windowName)") of menu 1 of menu bar item -2) then
-                            click (menu item 1 where its name contains "\(windowName)") of menu 1 of menu bar item -2
-                        end if
-                    end tell
-                end tell
-            end tell
-            activate
-        end tell
-        
-        delay 0.1
-        
-        tell application "\(windowOwner)"
-        tell application "System Events"
-        tell process "\(windowOwner)"
-        tell menu bar 1
-        if exists ((menu item 1 where its name contains "\(windowName)") of menu 1 of menu bar item -2) then
-        click (menu item 1 where its name contains "\(windowName)") of menu 1 of menu bar item -2
-        end if
-        end tell
-        end tell
-        end tell
-        activate
-        end tell
-        
-        """
-        print(myAppleScript)
-
-        if let scriptObject = NSAppleScript(source: myAppleScript) {
-            if let output: NSAppleEventDescriptor = scriptObject.executeAndReturnError(
-                &error) {
-                print(output.stringValue)
-            } else if (error != nil) {
-                print("error: \(error)")
-            }
-        }
-    }
-    
 }
 
-
+// TODO: Reset after reaching top / bottom
 extension SearchViewController: NSSearchFieldDelegate {
     func control(_ control: NSControl, textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
         if commandSelector == #selector(insertNewline(_:)) {
@@ -116,15 +56,12 @@ extension SearchViewController: NSSearchFieldDelegate {
 }
 
 extension SearchViewController {
-    // MARK: Storyboard instantiation
     static func freshController() -> SearchViewController {
-        //1.
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
-        //2.
         let identifier = NSStoryboard.SceneIdentifier("SearchViewController")
-        //3.
+    
         guard let viewcontroller = storyboard.instantiateController(withIdentifier: identifier) as? SearchViewController else {
-            fatalError("Why cant i find SearchViewController? - Check Main.storyboard")
+            fatalError("SearchViewController Not Found - Check Main.storyboard")
         }
         return viewcontroller
     }
