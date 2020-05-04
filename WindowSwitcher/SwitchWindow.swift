@@ -37,14 +37,15 @@ func switchWindow (window: WindowInfoDict) {
 }
 
 
-public func execAppleScript (appleScript: String) {
+public func execAppleScript (appleScript: String) -> String? {
     var error: NSDictionary?
     if let scriptObject = NSAppleScript(source: appleScript) {
         if let output: NSAppleEventDescriptor = scriptObject.executeAndReturnError(
             &error) {
-            print(output.stringValue)
+            return output.stringValue
         } else if (error != nil) {
             print("error: \(error)")
         }
     }
+    return nil
 }

@@ -19,13 +19,9 @@ class SearchViewController: NSViewController {
     
     override func viewWillAppear() {
         self.searchResultsController.content = Windows.all
+        self.searchResultsController.content = Tabs.all
         tableView.reloadData()
         super.viewWillAppear()
-    }
-    
-    func closePopOver() {
-        let appDelegate = NSApplication.shared.delegate as! AppDelegate
-        appDelegate.closePopover(sender: nil)
     }
     
     func switchToSelectedWindow() {
@@ -34,7 +30,11 @@ class SearchViewController: NSViewController {
         }
         switchWindow(window: window as! WindowInfoDict)
         self.closePopOver()
-        
+    }
+    
+    func closePopOver() {
+        let appDelegate = NSApplication.shared.delegate as! AppDelegate
+        appDelegate.closePopover(sender: nil)
     }
 }
 
