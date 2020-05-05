@@ -19,7 +19,7 @@ class SearchViewController: NSViewController {
     
     override func viewWillAppear() {
         self.searchResultsController.content = Windows.all
-        self.searchResultsController.content = Tabs.all
+        //self.searchResultsController.content = Tabs.all
         tableView.reloadData()
         super.viewWillAppear()
     }

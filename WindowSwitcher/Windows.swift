@@ -19,6 +19,10 @@ class WindowInfoDict: NSObject {
         return self.name
     }
     
+    var hasName : Bool {
+        return self.windowInfoDict["kCGWindowName" as NSObject] != nil
+    }
+    
     var processName : String {
         return self.dictItem(key: "kCGWindowOwnerName", defaultValue: "")
     }
@@ -41,6 +45,10 @@ class WindowInfoDict: NSObject {
     
     var alpha : Float {
         return self.dictItem(key: "kCGWindowAlpha", defaultValue: 0.0)
+    }
+    
+    var number: UInt32 {
+        return self.dictItem(key: "kCGWindowNumber", defaultValue: 0)
     }
     
     var tabIndex: Int {
@@ -72,6 +80,23 @@ class WindowInfoDict: NSObject {
 }
 
 struct Windows {
+    static var any : WindowInfoDict? {
+        get {
+            guard let wl = CGWindowListCopyWindowInfo([.optionOnScreenOnly, .excludeDesktopElements], kCGNullWindowID) else {
+                return nil
+            }
+            
+            return (0..<CFArrayGetCount(wl)).flatMap { (i : Int) -> [WindowInfoDict] in
+                guard let windowInfoRef = CFArrayGetValueAtIndex(wl, i) else {
+                    return []
+                }
+                
+                let wi = WindowInfoDict(rawDict: windowInfoRef)
+                return [wi]
+                }.first
+        }
+    }
+    
     static var all : [WindowInfoDict] {
         get {
             guard let wl = CGWindowListCopyWindowInfo([.excludeDesktopElements], kCGNullWindowID) else {
@@ -84,7 +109,6 @@ struct Windows {
                 }
                 
                 let wi = WindowInfoDict(rawDict: windowInfoRef)
-                
                 // We don't want to clutter our output with unnecessary windows that we can't switch to anyway.
                 guard wi.name.characters.count > 0 && !wi.isProbablyMenubarItem && wi.isVisible else {
                     return []
