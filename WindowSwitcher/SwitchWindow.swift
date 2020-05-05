@@ -19,14 +19,13 @@ func switchWindow (windowOwner: String, windowName: String) {
     end tell
     """
     
-    // * Activating desktop first allows switching to a specific window of the app
-    // * Clicking Window Name twice fixes the issue of sometimes switching to the app but not
-    //   the specific window
+    // Switching to the window depends on the responsivness of the system,
+    // Need to wait for app to activate before switching windows
     let appleScript = """
-    tell application "Finder" to activate desktop
-    delay 0.1
-    \(clickWindowName)
-    delay 0.1
+    tell application "\(windowOwner)"
+        activate
+    end tell
+    delay 0.5
     \(clickWindowName)
     """
     
@@ -37,7 +36,7 @@ func switchWindow (window: WindowInfoDict) {
     let windowOwner = window.appName
     let windowName = window.windowTitle
     
-    switchWindow(windowOwner: windowOwner, windowName: windowOwner)
+    switchWindow(windowOwner: windowOwner, windowName: windowName)
 }
 
 
