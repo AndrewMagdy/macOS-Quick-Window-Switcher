@@ -2,10 +2,7 @@ import Foundation
 
 // TODO: handle window names that contain quotes
 // TODO: error handling
-func switchWindow (window: WindowInfoDict) {
-    let windowOwner = window.appName
-    let windowName = window.windowTitle
-    
+func switchWindow (windowOwner: String, windowName: String) {
     // Click Appbar -> Window -> WindowName
     let clickWindowName = """
     tell application "\(windowOwner)"
@@ -34,6 +31,13 @@ func switchWindow (window: WindowInfoDict) {
     """
     
     execAppleScript(appleScript: appleScript)
+}
+
+func switchWindow (window: WindowInfoDict) {
+    let windowOwner = window.appName
+    let windowName = window.windowTitle
+    
+    switchWindow(windowOwner: windowOwner, windowName: windowOwner)
 }
 
 

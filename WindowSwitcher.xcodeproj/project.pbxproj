@@ -10,6 +10,7 @@
 		0458108376ED8DE8250E9181 /* Pods_WindowSwitcherUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B5CA14F72D58248C96E2F51 /* Pods_WindowSwitcherUITests.framework */; };
 		4C19C48B224A3D1C009D1C22 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C19C48A224A3D1C009D1C22 /* SearchViewController.swift */; };
 		4C19C48D224A5DA7009D1C22 /* Windows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C19C48C224A5DA7009D1C22 /* Windows.swift */; };
+		4C2AA0672460EE1200590E8F /* SwitchableWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2AA0662460EE1200590E8F /* SwitchableWindow.swift */; };
 		4C8D0BAB2246BC5000EB9F75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8D0BAA2246BC5000EB9F75 /* AppDelegate.swift */; };
 		4C8D0BAF2246BC5200EB9F75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C8D0BAE2246BC5200EB9F75 /* Assets.xcassets */; };
 		4C8D0BB22246BC5200EB9F75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C8D0BB02246BC5200EB9F75 /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 		1A7BB118ED5A38268121291B /* Pods-WindowSwitcherUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WindowSwitcherUITests.debug.xcconfig"; path = "Target Support Files/Pods-WindowSwitcherUITests/Pods-WindowSwitcherUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4C19C48A224A3D1C009D1C22 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		4C19C48C224A5DA7009D1C22 /* Windows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Windows.swift; sourceTree = "<group>"; };
+		4C2AA0662460EE1200590E8F /* SwitchableWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchableWindow.swift; sourceTree = "<group>"; };
 		4C39C59B22538593005520BB /* WindowSwitcher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WindowSwitcher.entitlements; sourceTree = "<group>"; };
 		4C8D0BA72246BC5000EB9F75 /* WindowSwitcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WindowSwitcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C8D0BAA2246BC5000EB9F75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				4C8D0BB32246BC5200EB9F75 /* Info.plist */,
 				4CE93B5322895322003302AA /* SwitchWindow.swift */,
 				4CE93B55228967B2003302AA /* BrowserTab.swift */,
+				4C2AA0662460EE1200590E8F /* SwitchableWindow.swift */,
 			);
 			path = WindowSwitcher;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C2AA0672460EE1200590E8F /* SwitchableWindow.swift in Sources */,
 				4C19C48B224A3D1C009D1C22 /* SearchViewController.swift in Sources */,
 				4C8D0BAB2246BC5000EB9F75 /* AppDelegate.swift in Sources */,
 				4C19C48D224A5DA7009D1C22 /* Windows.swift in Sources */,

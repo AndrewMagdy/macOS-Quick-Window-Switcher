@@ -3,7 +3,7 @@
 
 import Foundation
 
-class WindowInfoDict: NSObject {
+class WindowInfoDict: NSObject, SwitchableWindow {
     private let windowInfoDict : Dictionary<NSObject, AnyObject>;
     
     init(rawDict : UnsafeRawPointer) {
@@ -53,6 +53,10 @@ class WindowInfoDict: NSObject {
     
     var tabIndex: Int {
         return 0
+    }
+    
+    func switchToMe () {
+        switchWindow(window: self)
     }
     
     func dictItem<T>(key : String, defaultValue : T) -> T {

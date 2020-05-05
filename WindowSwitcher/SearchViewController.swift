@@ -18,17 +18,15 @@ class SearchViewController: NSViewController {
     }
     
     override func viewWillAppear() {
-        self.searchResultsController.content = Windows.all
-        //self.searchResultsController.content = Tabs.all
+        self.searchResultsController.content = Windows.all as [SwitchableWindow] + Tabs.all as [SwitchableWindow]
         tableView.reloadData()
         super.viewWillAppear()
     }
     
     func switchToSelectedWindow() {
-        guard let window = self.searchResultsController.selectedObjects.first else {
-            return
-        }
-        switchWindow(window: window as! WindowInfoDict)
+        let window = self.searchResultsController.selectedObjects.first as! SwitchableWindow
+        
+        window.switchToMe()
         self.closePopOver()
     }
     
