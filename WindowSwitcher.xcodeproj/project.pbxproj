@@ -15,7 +15,7 @@
 		4C8D0BAF2246BC5200EB9F75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C8D0BAE2246BC5200EB9F75 /* Assets.xcassets */; };
 		4C8D0BB22246BC5200EB9F75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C8D0BB02246BC5200EB9F75 /* Main.storyboard */; };
 		4CE93B5422895322003302AA /* SwitchWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE93B5322895322003302AA /* SwitchWindow.swift */; };
-		4CE93B56228967B2003302AA /* BrowserTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE93B55228967B2003302AA /* BrowserTab.swift */; };
+		4CE93B56228967B2003302AA /* BrowserTabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE93B55228967B2003302AA /* BrowserTabs.swift */; };
 		9183895C6DA3CEE87C4BEC6E /* Pods_WindowSwitcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACE9A6BD8A0AB77257E5D613 /* Pods_WindowSwitcher.framework */; };
 		F076AFAD4D0AC4084461671E /* Pods_WindowSwitcherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 961AE49F8C914B09180F26D0 /* Pods_WindowSwitcherTests.framework */; };
 /* End PBXBuildFile section */
@@ -52,7 +52,7 @@
 		4C8D0BB92246BC5200EB9F75 /* WindowSwitcherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WindowSwitcherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C8D0BC42246BC5200EB9F75 /* WindowSwitcherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WindowSwitcherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CE93B5322895322003302AA /* SwitchWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchWindow.swift; sourceTree = "<group>"; };
-		4CE93B55228967B2003302AA /* BrowserTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserTab.swift; sourceTree = "<group>"; };
+		4CE93B55228967B2003302AA /* BrowserTabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserTabs.swift; sourceTree = "<group>"; };
 		7B5CA14F72D58248C96E2F51 /* Pods_WindowSwitcherUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WindowSwitcherUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EC2EEC7027CE97C59C852EE /* Pods-WindowSwitcherUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WindowSwitcherUITests.release.xcconfig"; path = "Target Support Files/Pods-WindowSwitcherUITests/Pods-WindowSwitcherUITests.release.xcconfig"; sourceTree = "<group>"; };
 		961AE49F8C914B09180F26D0 /* Pods_WindowSwitcherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WindowSwitcherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,16 +113,16 @@
 		4C8D0BA92246BC5000EB9F75 /* WindowSwitcher */ = {
 			isa = PBXGroup;
 			children = (
+				4C8D0BAE2246BC5200EB9F75 /* Assets.xcassets */,
+				4C8D0BB02246BC5200EB9F75 /* Main.storyboard */,
 				4C39C59B22538593005520BB /* WindowSwitcher.entitlements */,
 				4C19C48A224A3D1C009D1C22 /* SearchViewController.swift */,
 				4C8D0BAA2246BC5000EB9F75 /* AppDelegate.swift */,
 				4C19C48C224A5DA7009D1C22 /* Windows.swift */,
-				4C8D0BAE2246BC5200EB9F75 /* Assets.xcassets */,
-				4C8D0BB02246BC5200EB9F75 /* Main.storyboard */,
-				4C8D0BB32246BC5200EB9F75 /* Info.plist */,
+				4CE93B55228967B2003302AA /* BrowserTabs.swift */,
 				4CE93B5322895322003302AA /* SwitchWindow.swift */,
-				4CE93B55228967B2003302AA /* BrowserTab.swift */,
 				4C2AA0662460EE1200590E8F /* SwitchableWindow.swift */,
+				4C8D0BB32246BC5200EB9F75 /* Info.plist */,
 			);
 			path = WindowSwitcher;
 			sourceTree = "<group>";
@@ -385,7 +385,7 @@
 				4C8D0BAB2246BC5000EB9F75 /* AppDelegate.swift in Sources */,
 				4C19C48D224A5DA7009D1C22 /* Windows.swift in Sources */,
 				4CE93B5422895322003302AA /* SwitchWindow.swift in Sources */,
-				4CE93B56228967B2003302AA /* BrowserTab.swift in Sources */,
+				4CE93B56228967B2003302AA /* BrowserTabs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
