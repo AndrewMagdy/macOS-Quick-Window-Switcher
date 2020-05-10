@@ -18,7 +18,7 @@ class SearchViewController: NSViewController {
     }
     
     override func viewWillAppear() {
-        self.searchResultsController.content = Windows.all as [SwitchableWindow] + BrowserTabs.all as [SwitchableWindow]
+        self.searchResultsController.content = Windows.allNonBrowser as [SwitchableWindow] + BrowserTabs.all as [SwitchableWindow]
         tableView.reloadData()
         super.viewWillAppear()
     }

@@ -27,7 +27,7 @@ class WindowInfoDict: NSObject, SwitchableWindow {
         return self.dictItem(key: "kCGWindowOwnerName", defaultValue: "")
     }
     
-     @objc dynamic var appName : String {
+    @objc dynamic var appName : String {
         return self.dictItem(key: "kCGWindowOwnerName", defaultValue: "")
     }
     
@@ -69,13 +69,17 @@ class WindowInfoDict: NSObject, SwitchableWindow {
     static func == (lhs: WindowInfoDict, rhs: WindowInfoDict) -> Bool {
         return lhs.processName == rhs.processName && lhs.name == rhs.name
     }
-        
+    
     var searchStrings: [String] {
         return [self.processName, self.name]
     }
     
     var isProbablyMenubarItem : Bool {
         return self.bounds.height < 30
+    }
+    
+    var isBrowserWindow : Bool {
+        return Constants.supportedBrowsers.contains(self.processName)
     }
     
     var isVisible : Bool {
@@ -98,6 +102,18 @@ struct Windows {
                 let wi = WindowInfoDict(rawDict: windowInfoRef)
                 return [wi]
                 }.first
+        }
+    }
+    
+    static var allBrowsers: [WindowInfoDict] {
+        get {
+            return Windows.all.filter {$0.isBrowserWindow}
+        }
+    }
+    
+    static var allNonBrowser: [WindowInfoDict] {
+        get {
+            return Windows.all.filter {!$0.isBrowserWindow}
         }
     }
     
